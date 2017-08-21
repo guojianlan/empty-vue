@@ -108,20 +108,20 @@ var getIPAdress = function () {
   }
   return '127.0.0.1'
 };
-module.exports = https.createServer(credentials, app).listen(port, (err) => {
-  if (err) {
-    console.log(err)
-    return
-  }
-  var uri = `https://${getIPAdress()}:${port}`
-  console.log('Listening at ' + uri + '\n')
+// module.exports = https.createServer(credentials, app).listen(port, (err) => {
+//   if (err) {
+//     console.log(err)
+//     return
+//   }
+//   var uri = `https://${getIPAdress()}:${port}`
+//   console.log('Listening at ' + uri + '\n')
 
-  if (process.env.NODE_ENV !== 'testing') {
-    opn(uri)
-  }
-});
-// module.exports = app.listen(port, (err) => {
-//   if (err) return
-//   opn(`http://${getIPAdress()}:${port}`)
-//   console.log(getIPAdress());
-// })
+//   if (process.env.NODE_ENV !== 'testing') {
+//     opn(uri)
+//   }
+// });
+module.exports = app.listen(port, (err) => {
+  if (err) return
+  opn(`http://${getIPAdress()}:${port}`)
+  console.log(getIPAdress());
+})
