@@ -59,7 +59,8 @@ var webpackConfig = merge(baseWebpackConfig, {
       filename: config[config.moduleName]['build'].index,
       template: baseWebpackConfig.htmlPath['index'],
       inject: true,
-	     tongji:'/static/js/tongji.js',
+	    otherJs:config[config.moduleName]['build'].otherJs,
+      otherCss:config[config.moduleName]['build'].otherCss,
       minify: {
         removeComments: true,
         collapseWhitespace: true,

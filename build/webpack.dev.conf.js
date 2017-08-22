@@ -28,7 +28,8 @@ module.exports = merge(baseWebpackConfig, {
       filename: 'index.html',
       template: baseWebpackConfig.htmlPath['index'],
       inject: true,
-      tongji: '',
+      otherJs:config[config.moduleName]['dev'].otherJs,
+      otherCss:config[config.moduleName]['dev'].otherCss
     }),
   ]
 })
